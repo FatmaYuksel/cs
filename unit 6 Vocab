@@ -1,0 +1,25 @@
+//a)
+public int countNotInVocab (String [] wordArray)
+  int count= 0;
+    for (String i: wordArray){
+      if(!findWord(i)){
+        count++;
+        }
+    }
+  return count;
+}
+
+//b)
+
+public String [] notInVocab (String [] wordArray)
+  int size= countNotInVocab(wordArray);
+  String[] arr= new String [size];
+  int index=0;
+    for (String i: wordArray){
+      if(!findWord(i)){
+        arr[index]=i;
+          index++
+        }
+    }
+return arr;
+}
