@@ -1,0 +1,5 @@
+for ( String i: words){
+  if(i.substring(i.length()-3).equals("ing"){
+    System.out.println(i);
+  }
+}
