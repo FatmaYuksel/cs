@@ -1,0 +1,50 @@
+import java.util.ArrayList;
+import java.util.List;
+
+public class BrilliantNumbers {
+
+    // Checks if a number is prime
+    public static boolean isPrime(int n) {
+        if (n < 2) return false;
+        for (int i = 2; i <= Math.sqrt(n); i++) {
+            if (n % i == 0) return false;
+        }
+        return true;
+    }
+
+    // Finds the prime factors of a number
+    public static List<Integer> findPrimeFactors(int n) {
+        List<Integer> primeFactors = new ArrayList<>();
+        for (int i = 2; i <= n; i++) {
+            if (isPrime(i) && n % i == 0) {
+                primeFactors.add(i);
+                n /= i;
+                i--;
+            }
+        }
+        return primeFactors;
+    }
+
+    // Checks if a number is brilliant
+    public static boolean isBrilliant(int number) {
+        List<Integer> primeFactors = findPrimeFactors(number);
+
+        // A brilliant number must have exactly two prime factors
+        if (primeFactors.size() != 2) return false;
+
+        // Check if the prime factors have the same number of digits
+        int length1 = String.valueOf(primeFactors.get(0)).length();
+        int length2 = String.valueOf(primeFactors.get(1)).length();
+
+        return length1 == length2;
+    }
+
+    public static void main(String[] args) {
+        int[] testData = {433793, 1000000081, 60, 339, 123467};
+
+        for (int number : testData) {
+            System.out.println(isBrilliant(number) ? "TRUE" : "FALSE");
+        }
+    }
+}
+
