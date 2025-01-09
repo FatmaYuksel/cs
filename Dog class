@@ -1,0 +1,15 @@
+class Test {
+    public static void main(String[] args) {
+        Dog fido = new Dog(5);
+        System.out.println(fido);
+
+        Dog yeller = new Dog(7);
+        System.out.println(yeller);
+
+        if (fido.equals(yeller)) {
+            System.out.println("yay!");
+        } else {
+            System.out.println("Oh no");
+        }
+    }
+}
