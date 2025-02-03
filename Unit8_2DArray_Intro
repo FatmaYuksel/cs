@@ -1,0 +1,21 @@
+class Main {
+ public static void main(String[] args) {
+
+   String[][] names = new String[2][5];// 
+   int[][] grades = new int[10][3];//30
+   names[0][0] = "Barb";
+   names[1][2] = "Mike";
+   double[][] prices = {{8.25,6.25},    
+                        {14.65,11.18},
+                        {7.50,15.25},
+                        {19.75,3.50}
+   };//[4][2]
+System.out.println(prices[2][0]);//7.5
+ prices[2][0] = 10.75;
+ System.out.println(prices[2][0]);//10/75
+ System.out.println(names[0][0]);//Barb
+ System.out.println(names[0][1]); //null
+ names[0][1] = "Steph";
+ System.out.println(names[0][1]);//Steph
+ }
+}
