@@ -1,0 +1,15 @@
+import java.util.Scanner;
+
+public class DeliveryGame {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int P = scanner.nextInt();
+        int C = scanner.nextInt();
+        int score = (P * 50) - (C * 10);
+        if (P > C) {
+            score += 500;
+        }
+        System.out.println(score);
+        scanner.close();
+    }
+}
