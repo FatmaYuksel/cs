@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class TileTapeCalculator {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int C = Integer.parseInt(scanner.nextLine());
+        int[][] tiles = new int[2][C];
+        for (int i = 0; i < 2; i++) {
+            String[] input = scanner.nextLine().split(" ");
+            for (int j = 0; j < C; j++) {
+                tiles[i][j] = Integer.parseInt(input[j]);
+            }
+        }
+        int tape = 0;
+        for (int i = 0; i < 2; i++) {
+            for (int j = 0; j < C; j++) {
+                if (tiles[i][j] == 1) {
+                    tape += 3;
+                    if (i == 0 && tiles[1][j] == 1) tape--;
+                    if (j > 0 && tiles[i][j - 1] == 1) tape--;
+                }
+            }
+        }
+        System.out.println(tape);
+        scanner.close();
+    }
+}
