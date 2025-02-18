@@ -1,0 +1,27 @@
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+
+public class ChiliSpiciness {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int n = Integer.parseInt(scanner.nextLine());
+        
+        Map<String, Integer> shuValues = new HashMap<>();
+        shuValues.put("Poblano", 1500);
+        shuValues.put("Mirasol", 6000);
+        shuValues.put("Serrano", 15500);
+        shuValues.put("Cayenne", 40000);
+        shuValues.put("Thai", 75000);
+        shuValues.put("Habanero", 125000);
+        
+        int totalSpiciness = 0;
+        for (int i = 0; i < n; i++) {
+            String pepper = scanner.nextLine();
+            totalSpiciness += shuValues.get(pepper);
+        }
+        
+        System.out.println(totalSpiciness);
+        scanner.close();
+    }
+}
