@@ -1,0 +1,18 @@
+def calculate_total_spiciness(n, peppers):
+    shu_values = {
+        "Poblano": 1500,
+        "Mirasol": 6000,
+        "Serrano": 15500,
+        "Cayenne": 40000,
+        "Thai": 75000,
+        "Habanero": 125000
+    }
+    
+    total_spiciness = sum(shu_values[pepper] for pepper in peppers)
+    return total_spiciness
+
+n = 4
+peppers = ["Poblano", "Cayenne", "Thai", "Poblano"]
+
+total_spiciness = calculate_total_spiciness(n, peppers)
+print(total_spiciness)
